@@ -1,8 +1,8 @@
 {
   "name": "Antidepressants",
+  "manifest_version": 2,
   "version": "1.0",
-  "manifest_version" : 1,
-  "description": "Shows random pictures of cute dogs!",
+  "description": "Shows random pictures of cute dogs! I love Lauren <3",
   "browser_action": {
     "default_popup": "popup.html"
   },
