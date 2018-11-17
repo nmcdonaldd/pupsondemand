@@ -1,13 +1,13 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-'use strict';
-
-$(document).ready(function(){
-    $.ajax({
-      url: "https://dog.ceo/api/breeds/image/random"
-    }).done(function(data){
-      const divId = "#cutenessOverload";
-      $(divId).prepend('<img src="' + data.message + '" />');
-    });
+document.addEventListener("DOMContentLoaded", event => {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState == 4) {
+      const resp = JSON.parse(xhr.responseText);
+      const image = document.createElement("img");
+      image.src = resp.message;
+      document.getElementById("cutenessOverload").appendChild(image);
+    }
+  };
+  xhr.send();
 });
